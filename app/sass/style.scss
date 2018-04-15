@@ -1,0 +1,16 @@
+@import "mixins";
+@import "variables";
+@import "normalize";
+@import "grid/bootstrap-grid";
+@import "fonts";
+@import "sprite/sprite";
+
+// main
+@import "main";
+
+//components
+@import "components/form";
+
+// blocks
+@import "blocks/header";
+@import "blocks/footer";

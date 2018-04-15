@@ -1,0 +1,68 @@
+//convert font-size in rem
+@function rem($px) {
+    @return $px / $font-size + 0rem;
+}
+
+// @include font("NameFont", "path");
+@mixin fonts($alias, $name, $weight:normal, $style:normal) {
+    @font-face {
+        font-family: $alias;
+        src: url("../fonts/" + $name + ".woff2") format("woff2"),
+        url("../fonts/" + $name + ".woff") format("woff"),
+        url("../fonts/" + $name + ".ttf") format("truetype");
+        font-weight: $weight;
+        font-style: $style;
+    }
+}
+
+// .block {
+// 	@include desktop {
+// 		@content;
+// 	}
+// }
+
+@mixin desktop {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin tablets {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin phones {
+    @media screen and (max-width: 576px) {
+        @content;
+    }
+}
+
+@mixin sm-phones {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+// @include placeholder(#000);
+@mixin placeholder($color: #000) {
+    &:-moz-placeholder,
+    &::-moz-placeholder {
+        color: $color;
+    }
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+    }
+}
+
+// @extend .icon-name;
